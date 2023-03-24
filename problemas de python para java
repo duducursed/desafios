@@ -1,0 +1,38 @@
+import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
+
+// DESAFIO DE PEGAR O ESTILO MUSICAL PREFERIDO DO USUÁRIO E MOSTRAR A PARTIR DESSA INFORMAÇÃO ALGUNS ARTISTAS DO ESTILO SELECIONADO.
+
+public class Main
+{
+    public static void main(String[] args) {
+      
+      Map <String, String[]> estilos = new HashMap<> ();
+      
+      estilos.put("Jazz", new String[] {"Julie London", "John Coltrane"});
+      estilos.put("Forró", new String[] {"João Gomes", "Barões da Pisadinha", "Calcinha Preta"});
+      estilos.put("Pagode", new String[] {"Thiaguinho"});
+      estilos.put("Classica", new String[] {"Debussy", "Beethoven"});
+      estilos.put("MPB", new String[] {"Seu Jorge"});
+      estilos.put("Sertanejo", new String[] {"Marília Mendonça"});
+      estilos.put("Rock", new String[] {"AC/DC"});
+      estilos.put("Pop", new String[] {"Michael Jackson", "Bruno Mars"});
+      
+      
+      System.out.println("Diga um gosto musical.");
+      Scanner leitor = new Scanner(System.in);
+      String escolhido = leitor.nextLine();
+      
+      if (estilos.containsKey(escolhido)){
+          
+          String[] artistas = estilos.get(escolhido);
+          System.out.print("Os artistas para esse tipo musical são: ");
+          for (String artista : artistas) {
+              System.out.print(artista + "; ");
+          }
+          
+      } 
+     
+    }
+}
